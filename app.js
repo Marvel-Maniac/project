@@ -6,8 +6,9 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require("express-session");
+const bcrypt = require("bcrypt");
 const MongoStore = require("connect-mongo")(session);
-const debug = require('debug')(`m2-0118-passport-auth:${path.basename(__filename).split('.')[0]}`)
+const debug = require('debug')(`marvel-maniac:${path.basename(__filename).split('.')[0]}`)
 const passportConfig = require('./passport')
 const {dbURL} = require('./config');
 
@@ -45,7 +46,7 @@ passportConfig(app);
 
 app.use((req,res,next) => {
   res.locals.user = req.user;
-  res.locals.title = 'Passport Auth 0118';
+  res.locals.title = 'Marvel Maniac';
   next();
 }) 
 
