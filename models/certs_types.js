@@ -5,5 +5,6 @@ module.exports = [
     "Hulk",
     "Thor",
     "Jessica Jones",
-    "Black Widow"
+    "Black Widow",
+    "SignUp"
 ];
