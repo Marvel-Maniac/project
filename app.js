@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require("express-session");
 const bcrypt = require("bcrypt");
-const marvel = require("marvel");
 const MongoStore = require("connect-mongo")(session);
 const debug = require('debug')(`marvel-maniac:${path.basename(__filename).split('.')[0]}`)
 const passportConfig = require('./passport')
