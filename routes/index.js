@@ -14,7 +14,9 @@ router.get('/private', isLoggedIn, function(req, res, next) {
 
 
 router.get('/onlyme', onlyMe, function(req, res, next) {
-  res.render('private');
+  var user = req.user;
+  var cert = req.user.certifications;
+  res.render('private', {user: user, cert: cert});
 });
 
 module.exports = router;

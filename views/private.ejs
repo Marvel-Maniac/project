@@ -1,5 +1,13 @@
-
 <h1>Los Simpson</h1>
+<p>Your Username: <%= user.username %></p>
+<p>Your profile photo:</p>
+<img src="<%= user.imgUrl %>" alt="">
+<p>You have the following certifications:</p>
+<ul>
+<% cert.forEach (function (c) { %>
+<li><%= c %></li>
+<% }) %>
+</ul>
 
 <img width=300 src="https://vignette.wikia.nocookie.net/simpsons/images/1/14/La-familia-simpson.jpg/revision/latest?cb=20131003193439" alt="">
 </br>
