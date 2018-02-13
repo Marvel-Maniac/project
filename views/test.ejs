@@ -1,0 +1,10 @@
+
+<div>
+  <ul>
+      <% titles.forEach((ttl) => { %>
+        <li><%= ttl.title %></li>
+        <li><%= ttl.description %></li>
+        <img src="<%= ttl.thumbnail.path %>.<%= ttl.thumbnail.extension %>" alt="">
+      <% }) %>
+      </ul>
+    </div>
