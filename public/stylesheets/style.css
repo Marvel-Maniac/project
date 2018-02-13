@@ -1,8 +1,29 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 a {
   color: #00B7FF;
+}
+
+
+.container-fluid{
+  background-color: #e23636;
+  display: block;
+}
+
+#bs-example-navbar-collapse-1 {
+  background-color: #e23636;
+  color: white;
+}
+
+#logo-color {
+  color:white;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
 }

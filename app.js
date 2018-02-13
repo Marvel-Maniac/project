@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const session = require("express-session");
 const bcrypt = require("bcrypt");
+const marvel = require("marvel");
 const MongoStore = require("connect-mongo")(session);
 const debug = require('debug')(`marvel-maniac:${path.basename(__filename).split('.')[0]}`)
 const passportConfig = require('./passport')
@@ -19,6 +20,7 @@ mongoose.connect(dbURL)
 
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const test = require('./routes/test');
 
 const app = express();
 
@@ -52,6 +54,7 @@ app.use((req,res,next) => {
 
 app.use('/', index);
 app.use('/auth', auth);
+app.use('/', test);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
