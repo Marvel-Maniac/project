@@ -9,7 +9,9 @@ const session = require("express-session");
 const bcrypt = require("bcrypt");
 const MongoStore = require("connect-mongo")(session);
 const debug = require('debug')(`marvel-maniac:${path.basename(__filename).split('.')[0]}`)
-const passportConfig = require('./passport')
+const passportConfig = require('./passport');
+const expressLayouts = require('express-ejs-layouts');
+
 const {dbURL} = require('./config');
 
 mongoose.connect(dbURL)
@@ -24,6 +26,8 @@ const test = require('./routes/test');
 const app = express();
 
 // view engine setup
+app.use(expressLayouts);
+app.set("layout", "layouts/main");
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
