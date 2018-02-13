@@ -9,6 +9,7 @@ const session = require("express-session");
 const bcrypt = require("bcrypt");
 const MongoStore = require("connect-mongo")(session);
 const debug = require('debug')(`marvel-maniac:${path.basename(__filename).split('.')[0]}`)
+const flash = require("connect-flash");
 const passportConfig = require('./passport');
 const expressLayouts = require('express-ejs-layouts');
 
@@ -50,9 +51,12 @@ app.use(session({
 }));
 passportConfig(app);
 
+app.use(flash());
+
 app.use((req,res,next) => {
   res.locals.user = req.user;
   res.locals.title = 'Marvel Maniac';
+  res.locals.messages = req.flash('info');
   next();
 }) 
 
