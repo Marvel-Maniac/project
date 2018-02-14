@@ -19,15 +19,13 @@ quiz.get('/quizSignup', function(req, res, next) {
 quiz.post('/quizSignup', function(req, res, next) {
   const option = req.body.option;
   if (option == req.body.solution) {
-    res.render("./auth/signup", { message: "Indicate username and password" });
+    res.render("./auth/signup", { message: "Congratulations! You are a Marvel Maniac" });
     return;
   }else{
-    req.flash('info', 'You didnt pass the signup quiz');
+    req.flash('info', 'You didnt pass the signup quiz. Try Again!');
     res.redirect("/");
   }
-
 });
-
 
 quiz.get('/quiz/:superhero', isLoggedIn, function(req, res, next) {
   var superhero0 = req.params.superhero;
@@ -57,9 +55,6 @@ quiz.post('/quizSuperhero', isLoggedIn, function(req, res, next) {
     res.redirect(`/quiz/${heroe}`);
     req.flash('info', "You didn't pass the quiz. Try again.")
   }
-
 });
-
-
 
 module.exports = quiz;

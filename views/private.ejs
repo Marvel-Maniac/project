@@ -1,4 +1,3 @@
-<h1>Los Simpson</h1>
 <p>Your Username: <%= user.username %></p>
 <p>Your profile photo:</p>
 <img src="/uploads/<%= user.imgUrl %>" alt="">
@@ -9,15 +8,18 @@
 <% }) %>
 </ul>
 <a href="/editProfile?id=<%= user._id %>">Edit Profile</a>
+<hr>
 <p>These are your posts:</p>
-<ul>
 <% posts.forEach (function (p) { %>
-<li><%= p.title %></li>
-<li><%= p.content %></li>
-<% }) %>
+<ul>
+  <li><%= p.title %></li>
+  <img src="/uploads/<%= p.imgUrl %>" alt="">
+  <li><%= p.content %></li>
+  <a href="/editPost?id=<%= p._id %>">Edit this post</a>
 </ul>
+<hr>
+<% }) %>
 <a href="/newPost?id=<%= user._id %>">Add New Post</a>
 
-<img width="300" src="https://vignette.wikia.nocookie.net/simpsons/images/1/14/La-familia-simpson.jpg/revision/latest?cb=20131003193439" alt="">
 </br>
 <a href="/">Go Home</a>

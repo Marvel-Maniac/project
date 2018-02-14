@@ -14,11 +14,9 @@ router.get('/private', isLoggedIn, function(req, res, next) {
   res.render('private');
 });
 
-
 router.get('/onlyme', onlyMe, function(req, res, next) {
   var cert = req.user.certifications;
   var userId = req.user._id;
-  console.log(userId);
   Post.find({user_id: userId})
     .then((posts) => {
       res.render('private', {cert: cert, posts: posts});

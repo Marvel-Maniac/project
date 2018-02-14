@@ -26,6 +26,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 
   <%- body %>
 
@@ -80,6 +81,22 @@
   <p>Welcome to <%= title %></p> -->
 
 
+=======
+  <h1><%= title %></h1>
+  <p>Welcome to <%= title %></p>
+  <div style="margin-top: 50px;">
+    <% messages.forEach( m => { %>
+      <div class="alert alert-warning" role="alert"><%= m %></div>
+    <% }) %>
+    <%- body %>
+  </div>
+
+<!-- </div>
+<% if (typeof message != "undefined") { %>
+  <div class="error-message"><%= message %></div>
+<% } %>
+<div> -->
+>>>>>>> 0a9aa2a99ee6e4fa9c84fad1b5df8e2ce7d7107e
 </body>
 
 </html>

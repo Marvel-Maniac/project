@@ -1,0 +1,26 @@
+<h1>Hello
+    <b>
+      <%= user.username %>
+    </b>
+  </h1>
+  <div class="col-sm-6 centered-form">
+    <form action="/editPost" method="post" enctype="multipart/form-data">
+      <h2>Edit Post</h2>
+      <div class="form-group">
+        <label for="title">New Title
+        </label>
+        <input type="text" name="title" class="form-control" placeholder="<%= myPost.title %>">
+      </div>
+      <div class="form-group">
+        <label for="content">New Content
+        </label>
+        <textarea type="text" name="content" class="form-control" placeholder="<%= myPost.content %>" rows="4" cols="50"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="imgUrl">New Post Image</label>
+        <img src="/uploads/<%= myPost.content %>" alt="">
+        <input type="file" name="image" class="form-control" placeholder="New image here">
+      </div>
+      <button type="submit">Save changes in Post</button>
+    </form>
+  </div>
