@@ -22,7 +22,7 @@ quiz.post('/quizSignup', function(req, res, next) {
     res.render("./auth/signup", { message: "Indicate username and password" });
     return;
   }else{
-    req.flash('info', "You didn't pass the registration quiz. Try again.")
+    req.flash('info', 'You didnt pass the signup quiz');
     res.redirect("/");
   }
 
