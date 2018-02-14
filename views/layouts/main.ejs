@@ -8,9 +8,19 @@
   <link href="../stylesheets/style.css" type="text/css" />
   </head>
 <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-
+  <h1><%= title %></h1>
+  <p>Welcome to <%= title %></p>
+  <div style="margin-top: 50px;">
+    <% messages.forEach( m => { %>
+      <div class="alert alert-warning" role="alert"><%= m %></div>
+    <% }) %>
     <%- body %>
+  </div>
+
+<!-- </div>
+<% if (typeof message != "undefined") { %>
+  <div class="error-message"><%= message %></div>
+<% } %>
+<div> -->
 </body>
 </html>
