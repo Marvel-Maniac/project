@@ -1,14 +1,23 @@
 <h1>Los Simpson</h1>
 <p>Your Username: <%= user.username %></p>
 <p>Your profile photo:</p>
-<img src="<%= user.imgUrl %>" alt="">
+<img src="/uploads/<%= user.imgUrl %>" alt="">
 <p>You have the following certifications:</p>
 <ul>
 <% cert.forEach (function (c) { %>
 <li><%= c %></li>
 <% }) %>
 </ul>
+<a href="/editProfile?id=<%= user._id %>">Edit Profile</a>
+<p>These are your posts:</p>
+<ul>
+<% posts.forEach (function (p) { %>
+<li><%= p.title %></li>
+<li><%= p.content %></li>
+<% }) %>
+</ul>
+<a href="/newPost?id=<%= user._id %>">Add New Post</a>
 
-<img width=300 src="https://vignette.wikia.nocookie.net/simpsons/images/1/14/La-familia-simpson.jpg/revision/latest?cb=20131003193439" alt="">
+<img width="300" src="https://vignette.wikia.nocookie.net/simpsons/images/1/14/La-familia-simpson.jpg/revision/latest?cb=20131003193439" alt="">
 </br>
 <a href="/">Go Home</a>
