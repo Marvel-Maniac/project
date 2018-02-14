@@ -1,16 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-  <title><%= title %></title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://jchamill.github.io/jquery-quiz/jquery.quiz-min.js"></script>
-  <link href="../stylesheets/style.css" type="text/css" />
-  </head>
-<body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <title>
+    <%= title %>
+  </title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Marvel');
+    </style>
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+  <link rel='stylesheet' href='../stylesheets/style.css' />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
 
-    <%- body %>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <%- body %>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+            aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="https://i.gyazo.com/97aa00ebfca53d724843ba07ec519eed.png" alt="logo Marvel" class="logoMarvel"/></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav" style="float: right;" > 
+            <% if(!user) { %>
+            <li>
+              <a href="/auth/login">Login</a>
+            </li>
+            <li>
+              <a href="/quizSignup">Signup</a>
+            </li>
+            <% } else { %>
+              <ul id="listMenu">
+                <li><h4 style="text-align: right; font-size: 1.8em; margin-right: 12px;">Hola <%= user.username %></h4></li>
+              </ul>
+              <ul id="listMenu2">
+                  <li> <img src="<% user.imgUrl %>" alt="" /> </li>
+                  <li> <a href="/superhero/captain_america">Captain America</a> </li>
+                  <li> <a href="/superhero/spider-man">Spider-man</a> </li>
+                  <li> <a href="/superhero/hulk">Hulk</a> </li>
+                  <li> <a href="/superhero/daredevil">Daredevil</a> </li>
+                  <li> <a href="/superhero/thor">Thor</a> </li>
+                  <li> <a href="/onlyme?id=<%= user._id %>">Go to my profile</a> </li>
+                  <li> <a href="/auth/logout">Logout</a> </li>
+                </ul>
+              <% } %>
+            </ul>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container" id="container-body">
+      <p></p>
+    </div>
+
+
+    <!-- <h1><%= title %></h1>
+  <p>Welcome to <%= title %></p> -->
+
+
 </body>
+
 </html>

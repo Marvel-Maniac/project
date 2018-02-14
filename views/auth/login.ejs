@@ -1,13 +1,17 @@
-<form action="/auth/login" method="POST">
+<div class="container">
+<form action="/auth/login" method="POST" id="formLogin">
+  <header id="headerLogin">Login</header>
     <div>
-      <label for="username">Username:</label>
-      <input type="text" name="username">
+      <label for="username" class="formLabel">Username:</label>
+      <input type="text" name="username" class="formInput">
     </div>
     <div>
-      <label for="password">Password:</label>
-      <input type="password" name="password">
+      <label for="password" class="formLabel">Password:</label>
+      <input type="password" name="password" class="formInput">
     </div>
     <div>
-      <input type="submit" value="Log In">
+      <input type="submit" value="Log In" class="formSubmit">
     </div>
 </form>
+
+</div>

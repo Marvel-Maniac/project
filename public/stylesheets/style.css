@@ -1,12 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Marvel');
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url(https://wallup.net/wp-content/uploads/2016/01/54184-DC_Comics-Batman-Iron_Man-Spider-Man-Green_Lantern-Captain_America-Wolverine-The_Flash-Hulk-Wonder_Woman.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Marvel', sans-serif!important;
+  font: 14px;
 }
 
 a {
-  color: #00B7FF;
+  color: white!important;
+  margin-right: 15px;
+  font-size: 1.5em;
 }
 
-.form_signup {
-  display: none;
+#usernameLogin {
+  font-size: 1.5em!important;
+  margin-right: 12px;
+}
+
+.logoMarvel {
+  width: 100%;
+  height: auto;
+  max-width: 60px;
+}
+
+.navbar-inverse{
+  background-color: #e23636!important;
+  background-image: none!important;
+  border-color: #e23636!important;
+}
+
+.navbar-brand {
+  color: white!important;
+}
+
+.noLogin {
+  float: right!important;
+}
+
+#listMenu {
+  list-style-type: none;
+}
+
+#listMenu2 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+#listMenu2 > li {
+  display: inline-block;
+}
+
+
+
+.navbar-inverse .navbar-nav>li>a{
+  color: white!important;
+}
+
+/* #containerLogin {
+background: white;
+    width: 100%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    font-family: lato;
+    position: relative;
+    color: #333;
+    border-radius: 10px;
+    margin-top: 25%;
+} */
+
+#formLogin {
+  background: white;
+  width: 80%;
+  margin-left: 10%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+  position: relative;
+  color: #333;
+  border-radius: 10px;
+  margin-top: 20%;
+}
+
+#headerLogin {
+  background: #FF3838;
+  padding: 30px 20px;
+  color: white;
+  font-size: 1.8em;
+  font-weight: 600;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+}
+
+.formLabel {
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  font-size: 1.3em;
+}
+
+.formInput {
+  display: block;
+  width: 68%;
+  margin: 0 auto;
+  padding: 5px 20px;
+  font-size: 1em;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.formSubmit {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-family: inherit;
+  color: white;
+  background: #FF3838;
+  outline: none;
+  border: none;
+  padding: 5px 15px;
+  font-size: 1.3em;
+  font-weight: 400;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.4);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+#quizsignupQuestion {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.8em;
+}
+
+#quizOptions {
+  text-align: center;
+    margin-top: 30px;
+}
+
+.inputQuizSignUp{
+  margin-right: 20px;
+  margin-left: 15px;
+  font-size: 1.4em;
 }

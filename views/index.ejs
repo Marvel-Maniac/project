@@ -4,27 +4,6 @@
     <title><%= title %></title>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-     <% if(!user) { %>
-      <ul>
-        <li><a href="/auth/login">Login</a></li>
-        <li><a href="/quizSignup">Signup</a></li>
-      </ul>
-    <% } else { %>
-      <h2>Hola <%= user.username %></h2>
-      <img src="/images/descarga.jpeg" alt=""/>
-    </br>
-      <a href="/private">Private - ??? VER SI LO DEJAMOS</a>
-      <a href="/onlyme?id=<%= user._id %>">Go to my profile</a>
-      <a href="/auth/logout">Logout</a>
-    </br> 
-    <a href="/superhero/captain_america">Captain America</a>
-    <a href="/superhero/spider-man">Spider-man</a>
-    <a href="/superhero/hulk">Hulk</a>
-    <a href="/superhero/daredevil">Daredevil</a>
-    <a href="/superhero/thor">Thor</a>
-    <% } %>
-   
+
   </body>
 </html>

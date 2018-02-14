@@ -1,22 +1,19 @@
-<form action="/quizSignup" method="POST">
-  <p><%= quiz.question %></p>
-  <img src="<%= quiz.imgUrl %>" width="100"/>
-  <div>
-    <input type="radio" id="0"
-     name="option" value="0">
-    <label for="0"><%= quiz.options[0] %></label>
+<form action="/quizSignup" method="POST" id="formLogin">
+  <header id="headerLogin">SignUp Quiz</header>
+  <p id="quizsignupQuestion"><%= quiz.question %></p>
+  <div id="quizOptions">
+    <input type="radio" id="0" name="option" value="0">
+    <label for="0" class="inputQuizSignUp"><%= quiz.options[0] %></label>
 
-    <input type="radio" id="1"
-     name="option" value="1">
-    <label for="1"><%= quiz.options[1] %></label>
+    <input type="radio" id="1" name="option" value="1">
+    <label for="1" class="inputQuizSignUp"><%= quiz.options[1] %></label>
 
-    <input type="radio" id="2"
-     name="option" value="2">
-    <label for="2"><%= quiz.options[2] %></label>
+    <input type="radio" id="2" name="option" value="2">
+    <label for="2" class="inputQuizSignUp"><%= quiz.options[2] %></label>
 
     <input type="text" name="solution" value="<%= quiz.correctOption %>" hidden> 
   </div>
   <div>
-    <button type="submit">Submit</button>
+    <input type="submit" value="Log In" class="formSubmit">
   </div>
 </form>

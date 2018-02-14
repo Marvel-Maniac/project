@@ -1,19 +1,16 @@
-<form action="/quizSuperhero" method="POST">
+<form action="/quizSuperhero" method="POST"  id="formLogin">
     <% for (i = 0, x = 0; i < quizes.length; i++){ %>
     <p><%= quizes[i].question %></p>
     <img src="<%= quizes[i].imgUrl %>" width=100/>
     <div>
-      <input type="radio" id="0"
-       name="<%= arrOptions[x] %>" value="0">
-      <label for="0"><%= quizes[i].options[0] %></label>
+      <input type="radio" id="0" name="<%= arrOptions[x] %>" value="0" class="formInput">
+      <label for="0" class="formLabel"><%= quizes[i].options[0] %></label>
   
-      <input type="radio" id="1"
-       name="<%= arrOptions[x] %>" value="1">
-      <label for="1"><%= quizes[i].options[1] %></label>
+      <input type="radio" id="1" name="<%= arrOptions[x] %>" value="1" class="formInput">
+      <label for="1" class="formLabel"><%= quizes[i].options[1] %></label>
   
-      <input type="radio" id="2"
-       name="<%= arrOptions[x] %>" value="2">
-      <label for="2"><%= quizes[i].options[2] %></label>
+      <input type="radio" id="2" name="<%= arrOptions[x] %>" value="2" class="formInput">
+      <label for="2" class="formLabel"><%= quizes[i].options[2] %></label>
   
       <input type="text" name="solution" value="<%= quizes[i].correctOption %>" hidden> 
     </div>

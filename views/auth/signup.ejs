@@ -1,22 +1,42 @@
+<div class="container">
+  <form action="/auth/login" method="POST" id="formLogin">
+    <header id="headerLogin">Login</header>
+      <div>
+        <label for="username" class="formLabel">Username:</label>
+        <input type="text" name="username" class="formInput">
+      </div>
+      <div>
+        <label for="password" class="formLabel">Password:</label>
+        <input type="password" name="password" class="formInput">
+      </div>
+      <div>
+        <input type="submit" value="Log In" class="formSubmit">
+      </div>
+      <div class="loginFooter">
+        <button>Create account</button>
+
+        <p class="account-message">
+          Do you already have an account?
+          <a href="/auth/login">Login</a>
+        </p>
+      </div>
+  </form>
+  
+  </div>
+
+
+
+
 <div class="form_signup">
   <form action="/auth/signup" method="POST" id="form-container">
     <label for="username">Username</label>
     <input id="username" type="text" name="username" placeholder="JonSnow">
-    <br><br>
     <label for="password">Password</label>
     <input id="password" type="password" name="password" placeholder="Your password">
 
     <% if (typeof message !== "undefined") { %>
       <div class="error-message"><%= message %></div>
     <% } %>
-    <br><br>
-
-    <button>Create account</button>
-
-    <p class="account-message">
-      Do you already have an account?
-      <a href="/auth/login">Login</a>
-    </p>
   </form>
 </div>
 
