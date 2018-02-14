@@ -29,7 +29,7 @@ quiz.post('/quizSignup', function(req, res, next) {
 });
 
 
-quiz.get('/quiz/:superhero', function(req, res, next) {
+quiz.get('/quiz/:superhero', isLoggedIn, function(req, res, next) {
   var superhero0 = req.params.superhero;
   var arrOptions = ['Question1', 'Question2', 'Question3'];
   superhero = superhero0.replace("_", " ");
@@ -44,7 +44,7 @@ quiz.get('/quiz/:superhero', function(req, res, next) {
   });
 });
 
-quiz.post('/quizSuperhero', function(req, res, next) {
+quiz.post('/quizSuperhero', isLoggedIn, function(req, res, next) {
   const option1 = req.body.Question1;
   const option2 = req.body.Question2;
   const option3 = req.body.Question3;

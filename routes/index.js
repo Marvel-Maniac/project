@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const User = require("../models/User");
+const Post = require("../models/Post");
 const isLoggedIn = require('../middlewares/isLoggedIn');
 const onlyMe = require('../middlewares/onlyMe');
 
@@ -14,9 +16,14 @@ router.get('/private', isLoggedIn, function(req, res, next) {
 
 
 router.get('/onlyme', onlyMe, function(req, res, next) {
-  var user = req.user;
   var cert = req.user.certifications;
-  res.render('private', {user: user, cert: cert});
+  var userId = req.user._id;
+  console.log(userId);
+  Post.find({user_id: userId})
+    .then((posts) => {
+      res.render('private', {cert: cert, posts: posts});
+    })
+    .catch(e => next(e));
 });
 
 module.exports = router;

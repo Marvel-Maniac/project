@@ -22,6 +22,7 @@ mongoose.connect(dbURL)
 
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const userRouter = require ('./routes/userRouter');
 const superheroe = require('./routes/superheroe');
 const quiz = require('./routes/quiz');
 
@@ -37,6 +38,7 @@ app.set('view engine', 'ejs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -50,7 +52,6 @@ app.use(session({
   })
 }));
 passportConfig(app);
-
 app.use(flash());
 
 app.use((req,res,next) => {
@@ -62,6 +63,7 @@ app.use((req,res,next) => {
 
 app.use('/', index);
 app.use('/auth', auth);
+app.use('/', userRouter);
 app.use('/superhero', superheroe);
 app.use('/', quiz);
 
