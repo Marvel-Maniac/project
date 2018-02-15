@@ -1,43 +1,40 @@
 <div class="containerPrivate">
-  <div class="containerPrivatePadding">
-    <p class="userNamePrivate">Hello <%= user.username %></p>
-    <p class="photoPrivate">Your profile photo:</p>
-    <img src="/uploads/<%= user.imgUrl %>" alt="">
-
-
-    <p>You have the following certifications:</p>
-    <ul>
-    <% userCert.forEach (function (c) { %>
-    <li><%= c.category %></li>
-    <img src="<%= c.imgUrl %>" alt="">
-    <% }) %>
-    </ul>
-    <hr>
-    <p>You are MISSING the certifications below.</p><p>Try to get them!!!!</p>
-    <ul>
-    <% allCert.forEach (function (c) { %>
-    <li><%= c.category %></li>
-    <img src="<%= c.imgUrl %>" alt="">
-    <a href="/quiz/<%= c.category %>">Get <%= c.category %> Certificate</a>
-    <% }) %>
-    </ul>
-
-
-    <a href="/editProfile?id=<%= user._id %>">Edit Profile</a>
-    <hr>
-    <p>These are your posts:</p>
-    <% posts.forEach (function (p) { %>
-    <ul>
-      <li><%= p.title %></li>
-      <img src="/uploads/<%= p.imgUrl %>" alt="">
-      <li><%= p.content %></li>
-      <a href="/editPost/<%= p._id %>">Edit this post</a>
-    </ul>
-    <hr>
-    <% }) %>
-    <a href="/newPost?id=<%= user._id %>">Add New Post</a>
-
-    </br>
-    <a href="/">Go Home</a>
+    <div class="containerPrivatePadding">
+      <div class="row">
+        <div class="col-sm-12">
+            <p class="userNamePrivate">Hello <%= user.username %>  -  <a href="/editProfile?id=<%= user._id %>" class="editProfile">Edit Profile</a></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+            <p class="photoPrivate">Your profile photo:</p>
+            <img src="/uploads/<%= user.imgUrl %>" alt="">
+        </div>
+        <div class="col-sm-6 certificationProfile">
+            <p>You have the following certifications:</p>
+            <ul>
+            <% cert.forEach (function (c) { %>
+            <li><%= c %></li>
+            <% }) %>
+            </ul>
+        </div>
+      </div>
+      <% posts.forEach (function (p) { %>
+          <div class="row" style="margin-top:20px;">
+              <hr/ class="hrSeparator">
+            <div class="col-sm-4">
+                <img src="/uploads/<%= p.imgUrl %>" alt=""  class="imgEvents"/>
+            </div>
+            <div class="col-sm-8">
+                  <p class="eventTitle"><%= p.title %></p>
+                  <p class="descriptionEvent"><%= p.content %></p>
+                  <p><a href="/editPost/<%= p._id %>" style="color:black!important">Edit this post</a></p>
+                  <p><a href="/newPost?id=<%= user._id %>" style="color: black!important">Add New Post</a></p>
+            </div>
+          </div>
+        <% }) %>
+      <hr>
+      </br>
+      <a href="/">Go Home</a>
+    </div>
   </div>
-</div>

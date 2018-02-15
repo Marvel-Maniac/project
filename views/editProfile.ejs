@@ -5,27 +5,21 @@
 </h1> -->
 
 
-
-
-<div class="containerPrivate">
-  <form action="/editProfile" method="post" enctype="multipart/form-data">
-    <h2>Change Profile Data</h2>
-    <div class="form-group">
-      <label for="username">Username
-        <br>Current Username:
-        <%= user.username %>
-      </label>
-      <input type="text" name="username" class="form-control" placeholder="New username here">
+<div class="container">
+    <form action="/editProfile" method="post" enctype="multipart/form-data" id="formLogin">
+      <header id="headerLogin">Change Profile Data</header>
+        <div>
+          <label for="username" class="formLabel">Current Username: <%= user.username %>:</label>
+          <input type="text" name="username" class="formInput" placeholder="New username here">
+        </div>
+        <div>
+          <label for="password" class="formLabel">Password:</label>
+          <input type="password" name="password" class="formInput">
+        </div>
+        <label for="profileImg" class="formLabel">Profile Image</label>
+        <input type="file" name="image" class="form-control" class="formImage" placeholder="New profile image here" style="width: 100%; height: auto; max-width: 300px; margin: 0 auto;">
+        <div>
+          <input type="submit" value="Change Profile" class="formSubmit">
+        </div>
+    </form>
     </div>
-    <div class="form-group">
-      <label for="password">Password
-      </label>
-      <input type="password" name="password" class="form-control" placeholder="New password here">
-    </div>
-    <div class="form-group">
-      <label for="profileImg">Profile Image</label>
-      <input type="file" name="image" class="form-control" placeholder="New profile image here">
-    </div>
-    <button type="submit">Change Profile</button>
-  </form>
-</div>
