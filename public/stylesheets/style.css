@@ -226,6 +226,37 @@ background: white;
   height: 1px; 
 }
 
+.errorQuizSignUp {
+  position: absolute;
+  top: 32%;
+  left: 40%;
+  color: white;
+
+}
+
+.titleChangeProfile {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.formImage {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.editProfile{
+  color: red!important;
+  font-size: 1em;
+}
+
+.certificationProfile {
+  padding-top: 20px;
+  font-size: 1.5em;
+}
+
+
 @media (max-width: 500px) {
   .superheroImg {
     width: 100%;
@@ -271,6 +302,10 @@ background: white;
     margin-right: 5px;
     margin-left: 5px;
     font-size: 1.4em;
+  }
+
+  .formImage {
+    max-width: 370px;
   }
 
 }
