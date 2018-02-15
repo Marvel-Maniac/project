@@ -1,7 +1,7 @@
 module.exports = [
     "captain america",
     "daredevil",
-    "Spider-man",
+    "spider-man",
     "hulk",
     "thor",
     "jessica jones",

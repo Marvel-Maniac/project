@@ -1,6 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const { dbURL } = require('../config');
+const dbURL = process.env.dbURL
 const Superheroe = require('../models/Superheroe');
 
 mongoose.connect(dbURL).then(() => console.log("Conectado!"));

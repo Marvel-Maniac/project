@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-  </head>
-  <body>
-
-  </body>
-</html>
+<div class="container">
+  <% if(user) { %>
+    <% superDatos.forEach((s) => { %>
+    <div>
+      <a href="/superhero/<%= s.name %>"><h2><%= s.name %></h2></a>
+      <a href="/superhero/<%= s.name %>">
+        <img src="<%= s.thumbnail.path %>.<%= s.thumbnail.extension %>" alt="" width="400">
+      </a>
+      <h3><%= s.description %></h3>
+    </div>
+    <% }) %>
+  <% } %>
+</div>

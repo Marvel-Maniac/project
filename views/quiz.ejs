@@ -11,9 +11,12 @@
     <input type="radio" id="2" name="option" value="2">
     <label for="2" class="inputQuizSignUp"><%= quiz.options[2] %></label>
 
-    <input type="text" name="solution" value="<%= quiz.correctOption %>" hidden> 
+    <input type="hidden" name="solution" value="<%= quiz.correctOption %>"> 
   </div>
   <div>
     <input type="submit" value="Log In" class="formSubmit">
   </div>
 </form>
+<% if (typeof message !== "undefined") { %>
+  <div class="error-message"><%= message %></div>
+<% } %>
