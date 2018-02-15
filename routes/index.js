@@ -40,9 +40,10 @@ router.get('/private', isLoggedIn, function(req, res, next) {
 router.get('/onlyme', onlyMe, function(req, res, next) {
   var cert = req.user.certifications;
   var userId = req.user._id;
+  var userImg = req.user.imgUrl;
   Post.find({user_id: userId})
     .then((posts) => {
-      res.render('private', {cert: cert, posts: posts});
+      res.render('private', {userImg: userImg, cert: cert, posts: posts});
     })
     .catch(e => next(e));
 });
