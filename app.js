@@ -22,6 +22,7 @@ mongoose.connect(dbURL)
 
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const test = require('./routes/test');
 const userRouter = require ('./routes/userRouter');
 const superheroe = require('./routes/superheroe');
 const quiz = require('./routes/quiz');
@@ -63,6 +64,7 @@ app.use((req,res,next) => {
 
 app.use('/', index);
 app.use('/auth', auth);
+app.use('/', test);
 app.use('/', userRouter);
 app.use('/superhero', superheroe);
 app.use('/', quiz);

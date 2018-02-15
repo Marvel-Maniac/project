@@ -7,10 +7,21 @@
 <div>
   <h2>Main Events affecting <%= superData.name %>:</h2>
   <ul>
-      <% evts.forEach((event) => { %>
-        <li><%= event.title %></li>
-        <li><%= event.description %></li>
-        <img src="<%= event.thumbnail.path %>.<%= event.thumbnail.extension %>" alt="">
-      <% }) %>
-      </ul>
-    </div>
+    <% evts.forEach((event) => { %>
+      <li><%= event.title %></li>
+      <li><%= event.description %></li>
+      <img src="<%= event.thumbnail.path %>.<%= event.thumbnail.extension %>" alt="">
+    <% }) %>
+  </ul>
+</div>
+<div>
+  <h2>Users Posts related to <%= superData.name %>:</h2>
+  <ul>
+    <% postsSuper.forEach((psts) => { %>
+      <li><%= psts.title %></li>
+      <li><%= psts.content %></li>
+      <img src="/uploads/<%= psts.imgUrl %>" alt="">
+    <% }) %>
+  </ul>
+</div>
+<a href="comics/<%= superData.name %>">See <%= superData.name %> Comics</a>

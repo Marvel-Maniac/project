@@ -42,6 +42,7 @@ userRouter.post('/newPost', upload.single('image'), function(req, res, next) {
   const newPost = new Post({  
     title: title,
     content: content,
+    category: category,
     imgUrl: req.file.filename,
     user_id: req.user._id
   });
@@ -58,14 +59,28 @@ userRouter.post('/newPost', upload.single('image'), function(req, res, next) {
     })
 });
 
-userRouter.get('/editPost', function(req, res, next) {
-  var postId = req.query.id;
+userRouter.get('/editPost/:idPost', function(req, res, next) {
+  var postId = req.params.idPost;
   Post.findById(postId, (err, myPost) => {
     if (err) { return next(err); }
     res.render('editPost', { myPost: myPost });
   });
 });
 
+userRouter.post('/editPost/:idPost', upload.single('image'), function(req, res, next) {
+  let idPost = req.params.idPost;
+  const { title, content, currentTitle, currentContent, oldImage, idUser } = req.body;
 
+  const update = {  
+    title: title || currentTitle,
+    content: content || currentContent,
+    imgUrl: req.file.filename || oldImage
+  }
+
+  Post.findByIdAndUpdate(idPost, update, {new: true}, (err, pst) => {
+    if (err){ return next(err); }
+    return res.redirect(`/onlyme?id= ${idUser}`);
+  })
+});
 
 module.exports = userRouter;
