@@ -1,10 +1,10 @@
 module.exports = [
-    "Captain America",
-    "Daredevil",
-    "Spiderman",
-    "Hulk",
-    "Thor",
-    "Jessica Jones",
-    "Black Widow",
-    "SignUp"
+    "captain america",
+    "daredevil",
+    "Spider-man",
+    "hulk",
+    "thor",
+    "jessica jones",
+    "black widow",
+    "signUp"
 ];

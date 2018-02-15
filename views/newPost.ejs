@@ -11,7 +11,7 @@
     <label for="category">Category</label><br>
     <select name="category" id="category">
       <% certs.forEach((cert) => { %>
-        <option type="text" value="<%= cert %>" class="form-control"><%= cert %></option>
+        <option type="text" name="category" value="<%= cert %>" class="form-control"><%= cert %></option>
       <%  }) %>
     </select>
   </div>

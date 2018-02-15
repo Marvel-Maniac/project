@@ -14,13 +14,25 @@ test.get('/test', function(req, response, next) {
   var titles = [];
   marvel.characters.findByName('spider-man')
   .then(function(res) {
-    return marvel.characters.events(res.data[0].id);
+    console.log('Found character ID', res.data[0].id);
+    return marvel.characters.comics(res.data[0].id);
   })
   .then(res => {
+    console.log('found %s comics of %s total', res.meta.count, res.meta.total);
+    console.log(res.data[0]);
     response.render('test',{titles: res.data});
   })
   .fail(console.error)
   .done();
+  // marvel.characters.findByName('spider-man')
+  // .then(function(res) {
+  //   return marvel.characters.events(res.data[0].id);
+  // })
+  // .then(res => {
+  //   response.render('test',{titles: res.data});
+  // })
+  // .fail(console.error)
+  // .done();
 });
 
 module.exports = test;
