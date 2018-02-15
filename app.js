@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -12,8 +13,7 @@ const debug = require('debug')(`marvel-maniac:${path.basename(__filename).split(
 const flash = require("connect-flash");
 const passportConfig = require('./passport');
 const expressLayouts = require('express-ejs-layouts');
-
-const {dbURL} = require('./config');
+const dbURL = process.env.dbURL
 
 mongoose.connect(dbURL)
         .then(() => debug(`Connected to ${dbURL}`))

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const { dbURL } = require('../config');
 const Quiz = require('../models/Quiz');
