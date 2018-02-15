@@ -1,25 +1,29 @@
-<p>Your Username: <%= user.username %></p>
-<p>Your profile photo:</p>
-<img src="/uploads/<%= user.imgUrl %>" alt="">
-<p>You have the following certifications:</p>
-<ul>
-<% cert.forEach (function (c) { %>
-<li><%= c %></li>
-<% }) %>
-</ul>
-<a href="/editProfile?id=<%= user._id %>">Edit Profile</a>
-<hr>
-<p>These are your posts:</p>
-<% posts.forEach (function (p) { %>
-<ul>
-  <li><%= p.title %></li>
-  <img src="/uploads/<%= p.imgUrl %>" alt="">
-  <li><%= p.content %></li>
-  <a href="/editPost/<%= p._id %>">Edit this post</a>
-</ul>
-<hr>
-<% }) %>
-<a href="/newPost?id=<%= user._id %>">Add New Post</a>
+<div class="containerPrivate">
+  <div class="containerPrivatePadding">
+    <p class="userNamePrivate">Hello <%= user.username %></p>
+    <p class="photoPrivate">Your profile photo:</p>
+    <img src="/uploads/<%= user.imgUrl %>" alt="">
+    <p>You have the following certifications:</p>
+    <ul>
+    <% cert.forEach (function (c) { %>
+    <li><%= c %></li>
+    <% }) %>
+    </ul>
+    <a href="/editProfile?id=<%= user._id %>">Edit Profile</a>
+    <hr>
+    <p>These are your posts:</p>
+    <% posts.forEach (function (p) { %>
+    <ul>
+      <li><%= p.title %></li>
+      <img src="/uploads/<%= p.imgUrl %>" alt="">
+      <li><%= p.content %></li>
+      <a href="/editPost/<%= p._id %>">Edit this post</a>
+    </ul>
+    <hr>
+    <% }) %>
+    <a href="/newPost?id=<%= user._id %>">Add New Post</a>
 
-</br>
-<a href="/">Go Home</a>
+    </br>
+    <a href="/">Go Home</a>
+  </div>
+</div>

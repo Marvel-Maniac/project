@@ -1,27 +1,50 @@
-<div>
-<h2><%= superData.name %></h2>
-<img src="<%= superData.thumbnail.path %>.<%= superData.thumbnail.extension %>" alt="" width="400">
-<h3><%= superData.description %></h3>
+<div class="superheroContainer">
+  <div class="superheroContainerPadding" style="margin-right: 5%; margin-left: 5%;">
+    <div class"row">
+      <div class="col-sm-12">
+        <h2 class="headerSuperhero" style="font-size: 3em; padding-bottom: 10px;"><strong><%= superData.name %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+          <img src="<%= superData.thumbnail.path %>.<%= superData.thumbnail.extension %>" alt="" width="400" class="superheroImg"/>
+      </div>
+      <div class="col-sm-6">
+          <h1>Description:</h3>
+          <h2 class="descriptionSuperhero"><%= superData.description %></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+          <h2 class="superheroEvents">Main Events affecting <%= superData.name %>:</h2>
+      </div>
+    </div>
+      <% evts.forEach((event) => { %>
+        <div class="row" style="margin-top:20px;">
+            <hr/ class="hrSeparator">
+          <div class="col-sm-4">
+              <img src="<%= event.thumbnail.path %>.<%= event.thumbnail.extension %>" alt=""  class="imgEvents"/>
+          </div>
+          <div class="col-sm-8">
+                <p class="eventTitle"><%= event.title %></p>
+                <p class="descriptionEvent"><%= event.description %></p>
+          </div>
+        </div>
+      <% }) %>
+
+    <div class="row">
+      <div class="col-sm-12">
+          <h2>Users Posts related to <%= superData.name %>:</h2>
+          <ul>
+              <% postsSuper.forEach((psts) => { %>
+                <li><%= psts.title %></li>
+                <li><%= psts.content %></li>
+                <img src="/uploads/<%= psts.imgUrl %>" alt="">
+              <% }) %>
+            </ul>
+      </div>
+    </div>
+    <a href="comics/<%= superData.name %>">See <%= superData.name %> Comics</a>
+  </div>
 </div>
-<hr>
-<div>
-  <h2>Main Events affecting <%= superData.name %>:</h2>
-  <ul>
-    <% evts.forEach((event) => { %>
-      <li><%= event.title %></li>
-      <li><%= event.description %></li>
-      <img src="<%= event.thumbnail.path %>.<%= event.thumbnail.extension %>" alt="">
-    <% }) %>
-  </ul>
-</div>
-<div>
-  <h2>Users Posts related to <%= superData.name %>:</h2>
-  <ul>
-    <% postsSuper.forEach((psts) => { %>
-      <li><%= psts.title %></li>
-      <li><%= psts.content %></li>
-      <img src="/uploads/<%= psts.imgUrl %>" alt="">
-    <% }) %>
-  </ul>
-</div>
-<a href="comics/<%= superData.name %>">See <%= superData.name %> Comics</a>
+
