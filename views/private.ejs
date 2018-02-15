@@ -13,10 +13,20 @@
         <div class="col-sm-6 certificationProfile">
             <p>You have the following certifications:</p>
             <ul>
-            <% cert.forEach (function (c) { %>
-            <li><%= c %></li>
-            <% }) %>
+              <% userCert.forEach (function (c) { %>
+                <li><%= c.category %></li>
+                <img src="<%= c.imgUrl %>" alt="">
+                <% }) %>
             </ul>
+            <hr>
+    <p>You are MISSING the certifications below.</p><p>Try to get them!!!!</p>
+    <ul>
+    <% allCert.forEach (function (c) { %>
+    <li><%= c.category %></li>
+    <img src="<%= c.imgUrl %>" alt="">
+    <a href="/quiz/<%= c.category %>">Get <%= c.category %> Certificate</a>
+    <% }) %>
+    </ul>
         </div>
       </div>
       <% posts.forEach (function (p) { %>
