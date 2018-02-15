@@ -3,12 +3,26 @@
     <p class="userNamePrivate">Hello <%= user.username %></p>
     <p class="photoPrivate">Your profile photo:</p>
     <img src="/uploads/<%= user.imgUrl %>" alt="">
+
+
     <p>You have the following certifications:</p>
     <ul>
-    <% cert.forEach (function (c) { %>
-    <li><%= c %></li>
+    <% userCert.forEach (function (c) { %>
+    <li><%= c.category %></li>
+    <img src="<%= c.imgUrl %>" alt="">
     <% }) %>
     </ul>
+    <hr>
+    <p>You are MISSING the certifications below.</p><p>Try to get them!!!!</p>
+    <ul>
+    <% allCert.forEach (function (c) { %>
+    <li><%= c.category %></li>
+    <img src="<%= c.imgUrl %>" alt="">
+    <a href="/quiz/<%= c.category %>">Get <%= c.category %> Certificate</a>
+    <% }) %>
+    </ul>
+
+
     <a href="/editProfile?id=<%= user._id %>">Edit Profile</a>
     <hr>
     <p>These are your posts:</p>

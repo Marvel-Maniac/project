@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require("../models/User");
 const Post = require("../models/Post");
+const Certification = require('../models/Certification');
 const isLoggedIn = require('../middlewares/isLoggedIn')
 const CERTS = require('../models/certs_types');;
 const onlyMe = require('../middlewares/onlyMe');
@@ -16,13 +17,6 @@ const marvel = api.createClient({
 router.get('/', function(req, res, next) {
   superDatos = [];
   CERTS.pop();
-
-  // Promise.all(CERTS.map((certName) => {
-  //   return marvel.characters.findByName(certName)
-  //   .then(res => superDatos.push(res.data[0]))
-  //   .fail(console.error)
-  //   .done();
-  // }))
 
   Promise.all(CERTS.map((certName) => {
     return marvel.characters.findByName(certName)
@@ -41,11 +35,26 @@ router.get('/onlyme', onlyMe, function(req, res, next) {
   var cert = req.user.certifications;
   var userId = req.user._id;
   var userImg = req.user.imgUrl;
-  Post.find({user_id: userId})
-    .then((posts) => {
-      res.render('private', {userImg: userImg, cert: cert, posts: posts});
+  var userCert = [];
+  var userNoCert = [];
+  var allCert = [];
+  Certification.find()
+  .then ((c) => {
+    allCert = c;
+    cert.forEach((certUser) => {
+      for (var i = 0; i<c.length; i++) {
+        if (certUser == c[i].category) {
+          userCert.push(c[i]);
+          allCert.splice(i,1);
+        }
+      }
     })
-    .catch(e => next(e));
+    Post.find({user_id: userId})
+      .then((posts) => {
+        res.render('private', {userImg: userImg, userCert: userCert, allCert: allCert ,posts: posts});
+      })
+      .catch(e => next(e));
+  })
 });
 
 module.exports = router;

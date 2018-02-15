@@ -69,6 +69,6 @@ Quiz.collection.drop();
 quizes.forEach(p => {
     let pr = new Quiz(p);
     pr.save()
-    .then(quiz => console.log(`Superheroe  ${quiz.question}`))
+    .then(quiz => console.log(`Quiz  ${quiz.question}`))
     .catch(err => console.log(err));
 });
