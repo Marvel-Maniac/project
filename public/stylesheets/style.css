@@ -256,8 +256,38 @@ background: white;
   font-size: 1.5em;
 }
 
+.nameSuperHeroIndex {
+  color: black;
+  font-size: 1.9em;
+}
+
+.getCertificate {
+  color: black!important;
+  font-size: 0.6em;
+}
+
+.quizQuestion {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 1.7em;
+}
+
+.labelQuizSuperHero {
+  margin-right: 10px!important;
+}
+
+.inputQuizSuperHero {
+  margin-left: 10px!important;
+  margin-right: 10px!important;
+}
 
 @media (max-width: 500px) {
+  .logoMarvel {
+    width: 100%;
+    height: auto;
+    max-width: 60px;
+    margin-top: 0px!important;
+  }
   .superheroImg {
     width: 100%;
     height: auto;
@@ -306,6 +336,12 @@ background: white;
 
   .formImage {
     max-width: 370px;
+  }
+
+  .quiztestQuestion {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
   }
 
 }
