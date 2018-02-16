@@ -1,13 +1,22 @@
-<div class="container">
-  <% if(user) { %>
-    <% superDatos.forEach((s) => { %>
-    <div>
-      <a href="/superhero/<%= s.name %>"><h2><%= s.name %></h2></a>
-      <a href="/superhero/<%= s.name %>">
-        <img src="<%= s.thumbnail.path %>.<%= s.thumbnail.extension %>" alt="" width="400">
-      </a>
-      <h3><%= s.description %></h3>
+<% if(user) { %>
+  <% superDatos.forEach((s) => { %>
+<div class="superheroContainer">
+    <div class="superheroContainerPadding" style="margin-right: 5%; margin-left: 5%;">
+    <div class="row">
+      <div class="col-sm-12">
+          <a href="/superhero/<%= s.name %>"><h2 class="nameSuperHeroIndex"><strong><%= s.name %></strong></h2></a>
+      </div>
+    <div class="row">
+      <div class="col-sm-6">
+          <img src="<%= s.thumbnail.path %>.<%= s.thumbnail.extension %>" alt="" width="400">
+      </div>
+      <div class="col-sm-6">
+          <h3><%= s.description %></h3>
+      </div>
     </div>
+    <hr/ class="hrSeparator">
     <% }) %>
   <% } %>
+  </div>
+  </div>
 </div>

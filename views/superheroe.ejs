@@ -35,16 +35,25 @@
     <div class="row">
       <div class="col-sm-12">
           <h2>Users Posts related to <%= superData.name %>:</h2>
-          <ul>
-              <% postsSuper.forEach((psts) => { %>
-                <li><%= psts.title %></li>
-                <li><%= psts.content %></li>
-                <img src="/uploads/<%= psts.imgUrl %>" alt="">
-              <% }) %>
-            </ul>
       </div>
     </div>
-    <a href="comics/<%= superData.name %>">See <%= superData.name %> Comics</a>
-  </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+        <% postsSuper.forEach((psts) => { %>
+        <div class="row">
+            <div class="col-sm-3">
+                <p style="font-size: 1em;"><%= psts.title %></p>
+                <p class="eventTitle">
+                    <img src="/uploads/<%= psts.imgUrl %>" alt="" style="width:100%; height: auto;" />
+                </p>
+            </div>
+            <div class="col-sm-9">
+                <p class="descriptionEvent">
+                    <%= psts.content %>
+                  </p>
+            </div>
+          </div>
+          <% }) %>
 </div>
+
 

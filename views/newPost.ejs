@@ -1,3 +1,42 @@
+<div class="container">
+    <form action="/newPost" method="post" enctype="multipart/form-data" id="formLogin">
+      <header id="headerLogin">New Post</header>
+        <div style="width: 100%; height: auto; max-width: 420px; margin: 0 auto;">
+          <label for="title" name="title" class="formLabel">Title</label>
+          <input type="text" name="title" class="form-control" placeholder="Add new title">
+        </div>
+        <div style="width: 100%; height: auto; max-width: 420px; margin: 0 auto;">
+          <label for="content" class="formLabel">Content:</label>
+          <textarea type="text" name="content" class="form-control" placeholder="Add new text"></textarea>
+        </div>
+        <div>
+            <p>&nbsp;</p>
+          </div>
+        <div style="width: 100%; height: auto; max-width: 420px; margin: 0 auto;">
+            <label for="category">Category</label><br>
+            <select name="category" id="category">
+              <% certs.forEach((cert) => { %>
+                <option type="text" name="category" value="<%= cert %>" class="form-control"><%= cert %></option>
+              <%  }) %>
+            </select>
+        </div>
+        <div>
+          <p>&nbsp;</p>
+        </div>
+        <div style="width: 100%; height: auto; max-width: 420px; margin: 0 auto;">
+            <label for="imgUrl">New Post Image</label>
+            <label for="image">Image</label>
+            <input type="file" name="image">
+        </div>
+        <div>
+          <input type="submit" value="Create New Post" class="formSubmit">
+        </div>
+    </form>
+  </div>
+<!-- 
+
+
+
 <form action="/newPost" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="title">Title</label>
@@ -22,4 +61,4 @@
   <div class="form-group">
     <button type="submit">Create New Post</button>
   </div>
-</form>
+</form> -->
