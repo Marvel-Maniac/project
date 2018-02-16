@@ -44,6 +44,9 @@
           </div>
         <% }) %>
       <hr>
+      <% if (typeof messages !== "undefined") { %>
+        <div class="error-message"><%= messages %></div>
+     <% } %>
       </br>
       <a href="/">Go Home</a>
     </div>

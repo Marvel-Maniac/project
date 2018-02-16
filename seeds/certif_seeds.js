@@ -9,31 +9,31 @@ mongoose.connect(dbURL).then(() => console.log("Conectado!").catch(err=>console.
 const certifications = [
     {
       category: 'captain america',
-      imgUrl: 'https://placeholdit.imgix.net/~text?txtsize=50&txt=CaptainAmericaCertificate&w=650&h=250'
+      imgUrl: 'http://cdn01.cdn.justjared.com/wp-content/uploads/headlines/2014/04/captain-america-earns-top-spot-at-box-office.jpg'
     },
     {
       category: 'daredevil',
-      imgUrl: 'https://placeholdit.imgix.net/~text?txtsize=50&txt=DaredevilCertificate&w=650&h=250'
+      imgUrl: 'http://d3u67r7pp2lrq5.cloudfront.net/product_photos/37089327/Daredevil---Amir-Hackett-WM_400w.jpg'
     },
     {
       category: 'spider-man',
-      imgUrl: 'https://placeholdit.imgix.net/~text?txtsize=50&txt=Spider-manCertificate&w=650&h=250'
+      imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE2f0BbWIEZLXNo12_OjD5Ar52DRvRMMIfAxomKVVryS2Dz6MmnQ'
     },
     {
       category: 'hulk',
-      imgUrl: 'https://placeholdit.imgix.net/~text?txtsize=50&txt=HulkCertificate&w=650&h=250'
+      imgUrl: 'http://www.marvel-hq.com/wp-content/uploads/2016/05/portrait_hulk_red.png'
     },
     {
       category: 'thor',
-      imgUrl: 'https://placeholdit.imgix.net/~text?txtsize=50&txt=ThorCertificate&w=650&h=250'
+      imgUrl: 'https://d3fa68hw0m2vcc.cloudfront.net/834/177055370.jpeg'
     },
     {
       category: 'jessica jones',
-      imgUrl: 'https://placeholdit.imgix.net/~text?txtsize=50&txt=JessicaJonesCertificate&w=650&h=250'
+      imgUrl: 'http://i.imgur.com/zEgC4F7.png'
     },
     {
       category: 'black widow',
-      imgUrl: 'https://placeholdit.imgix.net/~text?txtsize=50&txt=BlackWidowCertificate&w=650&h=250'
+      imgUrl: 'http://cdn02.cdn.justjaredjr.com/wp-content/uploads/headlines/2018/01/black-widow-movie-newsies.jpg'
     }
 ];
 

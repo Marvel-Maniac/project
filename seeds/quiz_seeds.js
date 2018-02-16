@@ -62,6 +62,48 @@ const quizes = [
       imgUrl: '',
       category: 'signUp'
     },
+    {
+      question: "¿Por qué Matt Murdock es ciego?",
+      options: ["Se resbala y tira sin querer bidones de un contenido químico que le deja ciego.", "Salvando la vida de un anciano ciego que iba a ser atropellado.", "Nació ciego."],
+      correctOption: 1,
+      imgUrl: '',
+      category: 'daredevil'
+    },
+    {
+      question: "¿Quién es Claire?",
+      options: ["Una enfermera que salva a Matt Murdock.", "La prima de Foggy Nelson.", "La secretaria de su bufete de abogados."],
+      correctOption: 0,
+      imgUrl: '',
+      category: 'daredevil'
+    },
+    {
+      question: "¿Quién es Stick?",
+      options: ["El abuelo de Matt Murdock.", "El padre de Elektra.", "El entrenador de Matt Murdock."],
+      correctOption: 2,
+      imgUrl: '',
+      category: 'daredevil'
+    },
+    {
+      question: "Aunque parezca mentira Thor tenía identidad secreta. ¿Cuál era su nombre?",
+      options: ["Donald J. Blake", "Martin Goodman", "Clark Kent"],
+      correctOption: 0,
+      imgUrl: '',
+      category: 'thor'
+    },
+    {
+      question: "¿Cómo se llama la hija que Thor tine con Sif?",
+      options: ["Torunn", "Eyra", "Helmi"],
+      correctOption: 0,
+      imgUrl: '',
+      category: 'thor'
+    },
+    {
+      question: "¿Cuál es uno de los poderes no tan conocidos de Thor?",
+      options: ["Thor puede crear agujeros negros", "Thor habla 110 idiomas", "Thor posee un estado de furia llamado \'ira del guerrero\' que aumenta sus poderes"],
+      correctOption: 2,
+      imgUrl: '',
+      category: 'thor'
+    },
 ];
 
 Quiz.collection.drop();

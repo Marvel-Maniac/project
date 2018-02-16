@@ -30,8 +30,10 @@
 </head>
 
 <body>
-
-  <%- body %>
+    <% if (messages !== "undefined") { %>
+      <div class="alert alert-warning"><%= messages %></div>
+    <% } %>
+ 
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -82,7 +84,7 @@
 
     <!-- <h1><%= title %></h1>
   <p>Welcome to <%= title %></p> -->
-
+  <%- body %>
 
 </body>
 

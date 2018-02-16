@@ -25,6 +25,7 @@ router.get('/', function(req, res, next) {
     promises.forEach(p => superDatos.push(p.data[0]))
     res.render('index', {superDatos: superDatos});
   })
+  .catch(e => console.log(e));
 });
 
 router.get('/private', isLoggedIn, function(req, res, next) {

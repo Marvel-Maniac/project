@@ -14,7 +14,6 @@ userRouter.get('/editProfile', onlyMe, function(req, res, next) {
 
 userRouter.post('/editProfile', upload.single('image'), function(req, res, next) {
   const { username, password } = req.body 
-  console.log(req.file);
 
   const update = {  
     username: username || req.user.username,
@@ -22,10 +21,10 @@ userRouter.post('/editProfile', upload.single('image'), function(req, res, next)
     imgUrl: req.file.filename || req.user.imgUrl
   }
   let id = req.user._id
-  console.log('este es mi user id guardado: ' + id);
   User.findByIdAndUpdate(id, update, {new: true}, (err, usr) => {
     if (err){ return next(err); }
-    return res.redirect(`/onlyme?id= ${id}`);
+    req.flash("info", "Your profile is being updated!");
+    return res.redirect(`/onlyme?id=${id}`);
   })
 });
 
@@ -37,7 +36,6 @@ userRouter.get('/newPost', onlyMe, function(req, res, next) {
 
 userRouter.post('/newPost', upload.single('image'), function(req, res, next) {
   const { title, content, category } = req.body 
-  console.log(req.body.category);
 
   const newPost = new Post({  
     title: title,
@@ -79,8 +77,20 @@ userRouter.post('/editPost/:idPost', upload.single('image'), function(req, res, 
 
   Post.findByIdAndUpdate(idPost, update, {new: true}, (err, pst) => {
     if (err){ return next(err); }
-    return res.redirect(`/onlyme?id= ${idUser}`);
+    req.flash("info", "Your post is being updated!");
+    return res.redirect(`/onlyme?id=${idUser}`);
   })
 });
+
+// userRouter.get('/deletePost/:idPost', (req, res) => {
+//   let idUser = req.locals.user_id;
+//   let idPost = req.params.idPost;
+
+//   Post.findByIdAndRemove(idPost, (err, posts) => {
+//     if (err){ return next(err); }
+//     req.flash("info", "Your post is being deleted!");
+//     return res.redirect(`/onlyme?id=${idUser}`);
+//   });
+// });
 
 module.exports = userRouter;
