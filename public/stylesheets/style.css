@@ -81,7 +81,7 @@ background: white;
   position: relative;
   color: #333;
   border-radius: 10px;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
 #headerLogin {
@@ -281,7 +281,37 @@ background: white;
   margin-right: 10px!important;
 }
 
+.comicList {
+  list-style-type: none; 
+  display: inline-block;
+}
+
+.comicList > li {
+  display: inline-block;
+}
+
+#comicTitles {
+  font-size: 1.6em;
+}
+
+.imgtitlesComics {
+  width: 100%!important;
+  height: auto;
+  max-width: 380px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
 @media (max-width: 500px) {
+
+  .alert alert-info {
+    position: absolute;
+    left: 26%;
+    top: 13%;
+    z-index: 999;
+  }
+
   .logoMarvel {
     width: 100%;
     height: auto;
@@ -342,6 +372,18 @@ background: white;
     display: flex;
     width: 90%;
     margin: 0 auto;
+  }
+
+  .imgtitlesComics {
+    width: 100%!important;
+    height: auto;
+    max-width: 380px;
+    margin: 0!important;
+  }
+
+  #comicTitles {
+    font-size: 1.4em;
+    padding-top: 20px;
   }
 
 }

@@ -12,7 +12,7 @@
     @import url('https://fonts.googleapis.com/css?family=Marvel');
     </style>
   <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-  <link rel='stylesheet' href='../stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
@@ -30,8 +30,14 @@
 </head>
 
 <body>
-    <% if (messages !== "undefined") { %>
-      <div class="alert alert-warning"><%= messages %></div>
+    <% if (messages.length > 0) { %>
+      <div class="alert alert-info" style="
+      position: absolute;
+      left: 38%;
+      top: 14%;
+      z-index: 999;
+      font-size:1.5em;
+  "><%= messages %></div>
     <% } %>
  
 

@@ -1,20 +1,35 @@
-<div>
-  <h2><%= superData.name %> Comics</h2>
-  <img src="<%= superData.thumbnail.path %>.<%= superData.thumbnail.extension %>" alt="" width="400">
-  <h3><%= superData.description %></h3>
-  </div>
-  <hr>
-<div>
-  <ul>
+<div class="superheroContainer">
+  <div class="superheroContainerPadding" style="margin-right: 5%; margin-left: 5%;">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>
+          <%= superData.name %> Comics</h2>
+        <img src="<%= superData.thumbnail.path %>.<%= superData.thumbnail.extension %>" alt="" width="400">
+      </div>
+      <div class="col-sm-6">
+        <h3>
+          <%= superData.description %>
+        </h3>
+      </div>
+    </div>
     <% titles.forEach((ttl) => { %>
-      <li>TITLE: <%= ttl.title %></li>
-      <li>Number of pages: <%= ttl.pageCount %></li>
-      <li>ISBN: <%= ttl.isbn %></li>
-      <li>Format: <%= ttl.format %></li>
-      <li>Price: <%= ttl.prices[0].price %></li>
-      <li><%= ttl.description %></li>
-      <img src="<%= ttl.thumbnail.path %>.<%= ttl.thumbnail.extension %>" alt="" width="200">
-      <hr>
-    <% }) %>
-  </ul>
+      <hr/ class="hrSeparator">
+      <p>&nbsp;</p>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="<%= ttl.thumbnail.path %>.<%= ttl.thumbnail.extension %>" alt="" width="100%" class="imgtitlesComics">
+        </div>
+        <div class="col-md-6" id="comicTitles">
+          <ul>
+            <li>TITLE: <%= ttl.title %> </li>
+            <li>Number of pages: <%= ttl.pageCount %> </li>
+            <li>ISBN: <%= ttl.isbn %> /li>
+            <li>Format: <%= ttl.format %> </li>
+            <li>Price: <%= ttl.prices[0].price %> </li>
+            <li> <%= ttl.description %> </li>
+          </ul>
+        </div>
+      </div>
+      <% }) %>
+  </div>
 </div>
